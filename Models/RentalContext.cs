@@ -37,7 +37,7 @@ namespace ST10083941_CLDV6211_POE.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("name=DefaultConnection");
+                optionsBuilder.UseSqlServer("DefaultConnection");
             }
         }
 

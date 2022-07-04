@@ -1,0 +1,55 @@
+﻿@page
+@model ST10083941_CLDV6211_POE.Pages.Cars.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Car</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.KilometersTraveled)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.KilometersTraveled)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.ServiceKilometers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.ServiceKilometers)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.Available)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Available)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.BodyType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.BodyType.BodyDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.Make)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Make.MakeDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Car.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Car.Model.ModelDescription)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Car.CarId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
