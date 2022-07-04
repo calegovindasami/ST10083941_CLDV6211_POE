@@ -1,0 +1,40 @@
+﻿@page
+@model ST10083941_CLDV6211_POE.Pages.Inspectors.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Inspector</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inspector.InspectorName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inspector.InspectorName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inspector.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inspector.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inspector.MobileNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inspector.MobileNumber)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Inspector.InspectorId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
