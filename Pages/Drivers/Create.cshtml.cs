@@ -29,6 +29,13 @@ namespace ST10083941_CLDV6211_POE.Pages.Drivers
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+            var existingDriverID = _context.Drivers.FirstOrDefault(d => d.DriverId == Driver.DriverId);
+
+            if (existingDriverID != null)
+            {
+                ModelState.AddModelError("Driver.DriverId", "Driver ID already exists.");
+            }
+
             if (!ModelState.IsValid)
             {
                 return Page();

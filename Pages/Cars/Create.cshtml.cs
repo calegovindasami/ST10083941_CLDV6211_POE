@@ -32,6 +32,15 @@ namespace ST10083941_CLDV6211_POE.Pages.Cars
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+            //Prevents user from adding a car with an ID that exists.
+            var existingCarID = _context.Cars.FirstOrDefault(c => c.CarId == Car.CarId);
+
+            if (existingCarID != null)
+            {
+                ModelState.AddModelError("Car.CarId", "Car ID already exists. Please pick a new one.");
+                OnGet();
+            }
+
             if (!ModelState.IsValid)
             {
                 return Page();

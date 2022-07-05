@@ -19,7 +19,7 @@ namespace ST10083941_CLDV6211_POE.Models
         [StringLength(4, ErrorMessage = "Driver ID cannot exceed 4 characters.")]
         [Key]
         public string DriverId { get; set; }
-        [RegularExpression(@"^[A-Za-z]*$", ErrorMessage = "Use letters only please.")]
+        [RegularExpression(@"^[A-Za-z\s]*$", ErrorMessage = "Use letters only please.")]
         [DisplayName("Full Name")]
         [StringLength(100, ErrorMessage = "Driver name cannot exceed 100 characters.")]
         [Required]

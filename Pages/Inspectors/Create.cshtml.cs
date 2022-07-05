@@ -29,6 +29,12 @@ namespace ST10083941_CLDV6211_POE.Pages.Inspectors
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+            var existingInspectorID = _context.Inspectors.FirstOrDefault(i => i.InspectorId == Inspector.InspectorId);
+
+            if (existingInspectorID != null)
+            {
+                ModelState.AddModelError("Inspector.InspectorId", "Inspector ID already exists.");
+            }
             if (!ModelState.IsValid)
             {
                 return Page();
