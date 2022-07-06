@@ -18,11 +18,20 @@ namespace ST10083941_CLDV6211_POE.Pages.Rentals
             _context = context;
         }
 
-        public IList<Rental> Rental { get;set; }
 
+        public IList<Rental> Rental { get;set; }
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
         public async Task OnGetAsync()
         {
-            Rental = await _context.Rentals
+            var rentals = from r in _context.Rentals select r;
+
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                rentals = rentals.Where(r => r.RentalId == SearchString);
+            }
+
+            Rental = await rentals
                 .Include(r => r.Car)
                 .Include(r => r.Driver)
                 .Include(r => r.Inspector).ToListAsync();

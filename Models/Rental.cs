@@ -38,6 +38,7 @@ namespace ST10083941_CLDV6211_POE.Models
 
         [DataType(DataType.Currency)]
         [Required]
+        [DisplayName("Rental Fee")]
         [Range(0, int.MaxValue, ErrorMessage = "Value cannot be lower than 0.")]
         public decimal RentalFee { get; set; }
 

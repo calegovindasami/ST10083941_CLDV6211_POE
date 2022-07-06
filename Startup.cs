@@ -42,6 +42,7 @@ namespace ST10083941_CLDV6211_POE
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
                 app.UseMigrationsEndPoint();
             }
             else
