@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-
 #nullable disable
 
 namespace ST10083941_CLDV6211_POE.Models

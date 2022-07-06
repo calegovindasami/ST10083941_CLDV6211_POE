@@ -13,7 +13,7 @@ namespace ST10083941_CLDV6211_POE.Models
         {
             Rentals = new HashSet<Rental>();
         }
-        [RegularExpression(@"^[0-9A-Za-z]*$", ErrorMessage = "Use alphanumeric characters only please.")]
+        [RegularExpression(@"^[0-9A-Za-z\s]*$", ErrorMessage = "Use alphanumeric characters only please.")]
         [DisplayName("Driver ID")]
         [Required]
         [StringLength(4, ErrorMessage = "Driver ID cannot exceed 4 characters.")]

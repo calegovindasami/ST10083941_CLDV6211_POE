@@ -1,0 +1,67 @@
+﻿@page
+@model ST10083941_CLDV6211_POE.Pages.Rentals.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].RentalId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].RentalFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].RentalStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].RentalEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].Car)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].Driver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rental[0].Inspector)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Rental) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentalEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.CarId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Driver.DriverId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inspector.InspectorId)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

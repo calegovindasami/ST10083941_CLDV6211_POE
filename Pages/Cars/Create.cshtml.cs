@@ -35,7 +35,7 @@ namespace ST10083941_CLDV6211_POE.Pages.Cars
             //Prevents user from adding a car with an ID that exists.
             var existingCarID = _context.Cars.FirstOrDefault(c => c.CarId == Car.CarId);
 
-            if (existingCarID != null)
+           if (existingCarID != null)
             {
                 ModelState.AddModelError("Car.CarId", "Car ID already exists. Please pick a new one.");
                 OnGet();
