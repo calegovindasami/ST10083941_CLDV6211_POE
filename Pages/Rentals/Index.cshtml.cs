@@ -23,16 +23,17 @@ namespace ST10083941_CLDV6211_POE.Pages.Rentals
         public IList<Rental> Rental { get;set; }
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
-        
 
         public async Task OnGetAsync()
         {
+
             var rentals = from r in _context.Rentals select r;
 
             if (!string.IsNullOrEmpty(SearchString))
             {
                 rentals = rentals.Where(r => r.RentalId == SearchString);
             }
+
 
             Rental = await rentals
                 .Include(r => r.Car)
