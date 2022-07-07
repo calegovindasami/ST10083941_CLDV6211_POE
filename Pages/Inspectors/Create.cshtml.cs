@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ST10083941_CLDV6211_POE.Models;
-
+using Microsoft.AspNetCore.Authorization;
 namespace ST10083941_CLDV6211_POE.Pages.Inspectors
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
+
         private readonly ST10083941_CLDV6211_POE.Models.RentalContext _context;
 
         public CreateModel(ST10083941_CLDV6211_POE.Models.RentalContext context)

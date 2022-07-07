@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,6 +10,7 @@ using ST10083941_CLDV6211_POE.Models;
 
 namespace ST10083941_CLDV6211_POE.Pages.Cars
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly ST10083941_CLDV6211_POE.Models.RentalContext _context;
