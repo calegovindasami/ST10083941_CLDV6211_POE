@@ -1,0 +1,61 @@
+﻿@page
+@model ST10083941_CLDV6211_POE.Pages.Returns.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        Return ID: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalReturn[0].ReturnId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalReturn[0].ReturnDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalReturn[0].DailyFine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalReturn[0].Inspector)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RentalReturn[0].Rental)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.RentalReturn) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DailyFine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inspector.InspectorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rental.RentalId)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
