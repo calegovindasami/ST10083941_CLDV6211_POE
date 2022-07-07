@@ -16,8 +16,8 @@
         <input type="submit" value="Search"/>
     </p>
 </form>
-<table class="table">
-    <thead>
+<table class="table table-bordered table-hover">
+    <thead class="thead-light">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Rental[0].RentalId)
@@ -40,7 +40,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Rental[0].Inspector)
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
